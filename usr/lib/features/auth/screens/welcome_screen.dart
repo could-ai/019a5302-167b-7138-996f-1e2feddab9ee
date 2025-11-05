@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:couldai_user_app/features/auth/screens/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -38,49 +39,26 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      // TODO: Navigate to Login/Signup screen
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.blue.shade700,
-                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
-                      elevation: 5,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LoginScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.blue.shade700,
+                    padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
                     ),
-                    child: Text('Get Started', style: Theme.of(context).textTheme.labelLarge),
+                    elevation: 5,
                   ),
-                  const SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          // TODO: Implement language change to English
-                        },
-                        child: const Text(
-                          'English',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      const Text('|', style: TextStyle(color: Colors.white70)),
-                      TextButton(
-                        onPressed: () {
-                          // TODO: Implement language change to Hindi
-                        },
-                        child: const Text(
-                          'हिंदी',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                  child: Text('Get Started', style: Theme.of(context).textTheme.labelLarge),
+                ),
               ),
             ],
           ),
