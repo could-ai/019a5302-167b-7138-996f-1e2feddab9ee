@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:couldai_user_app/features/auth/screens/login_screen.dart';
+import 'package:couldai_user_app/routes.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -43,10 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 40.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const LoginScreen()),
-                    );
+                    Navigator.pushNamed(context, AppRoutes.login);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

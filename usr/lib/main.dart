@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:couldai_user_app/features/auth/screens/welcome_screen.dart';
+import 'package:couldai_user_app/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
           labelLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         )
       ),
-      home: const WelcomeScreen(),
+      initialRoute: AppRoutes.welcome,
+      routes: getAppRoutes(),
     );
   }
 }
